@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+body{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Nunito', sans-serif;
+    background-color: lavender;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+#topbar{
+    margin: 0%;
+    background-color: rgb(19, 28, 46);
+    display: flex;
+    justify-content: space-evenly;
+    height: 40px;
+    padding: 10px;
+}
+
+#main-logo{
+    flex: 2;
+    font-family: 'Fredoka One', cursive;
+    color: white;
+    font-size: 32px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#main-logo a{
+    color: white;
+    text-decoration: none;
+}
+
+#main-logo:hover{
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+#main-logo b{
+    font-weight: 500;
+    color: tomato;
+}
+
+
+#main-logo{
+    flex: 1;
+}
+ 
+h2{
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+
+#main-showcase{
+    display: flex;
+    background-color: white;
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 20px;
+    padding: 1%;
+}
+
+#business-row{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.business-card{
+    justify-content: space-evenly;
+    font-weight: 700;
+    text-align: center;
+    font-size: 14px;
+    max-height: 300px;
+    max-width: 300px;
+    margin-bottom: 30px;
+}
+
+.business-card a{
+    color: black;
+    text-decoration: none;
+}
+
+img {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    max-width: 50%;
+    max-height: 500%;
+    display: block;
+}
+
+footer{
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 0%;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(19, 28, 46);
+    color: white;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

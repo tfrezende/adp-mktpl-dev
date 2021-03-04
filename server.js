@@ -22,8 +22,21 @@ app.get('/api/businesses', (req, res) => {
     })
 });
 app.get('/api/businesses/:id', (req, res) => {
+    const id = req.params.id;
     request({
-        url: `${baseUrl}/search?location=nyc`,
+        url: `${baseUrl}/${id}`,
+        headers: {
+            'Authorization': 'Bearer ' + process.env.API_KEY
+        }
+        
+    }, (error, response, body) => {
+        res.json(JSON.parse(body));   
+    })
+});
+app.get('/api/businesses/:id/reviews', (req, res) => {
+    const id = req.params.id;
+    request({
+        url: `${baseUrl}/${id}/reviews`,
         headers: {
             'Authorization': 'Bearer ' + process.env.API_KEY
         }
