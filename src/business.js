@@ -2,13 +2,10 @@ const renderBusiness = async (id) => {
     if (!id) {
         return false;
     }
-    console.log(id);
     let business = await fetch(`http://localhost:3000/api/business?id=${id}`);
     business.json().then(async parlor => {
         let reviews = await fetch(`http://localhost:3000/api/business/reviews?id=${id}`);
         reviews.json().then(revs => {
-            console.log(revs);
-
             let parlor_info = document.createElement('div');
             parlor_info.innerHTML = `<div><img id="parlor-image" src="${parlor.image_url}"><br></div>
                                 <div><h2>${parlor.name}</h2></div>
