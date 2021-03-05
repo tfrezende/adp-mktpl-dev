@@ -11,8 +11,9 @@ app.use((req, res, next) => {
 });
 
 app.get('/api/businesses', (req, res) => {
+
     request({
-        url: `${baseUrl}/search?location=nyc`,
+        url: `${baseUrl}/search?location=alpharetta&term=ice%cream`,
         headers: {
             'Authorization': 'Bearer ' + process.env.API_KEY
         }
