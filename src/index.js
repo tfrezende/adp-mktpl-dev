@@ -1,4 +1,4 @@
-const getBusinesses = async () => {
+const renderBusinesses = async () => {
     let businesses = await fetch('http://localhost:3000/api/businesses');
     businesses = businesses.json();
     businesses.then(res => {      
@@ -26,8 +26,8 @@ const getBusinesses = async () => {
         for (let i = 0; i < 5; i++) {
             let item = document.createElement('div');
             item.className = "business-card";
-            item.innerHTML =    `<div> <a href="business.html?${businesses[i].id}}"><img src="${businesses[i].image_url}"></a></div>
-                                <div> <a href="business.html?${businesses[i].id}">${businesses[i].name}</a></div>
+            item.innerHTML =    `<div> <a href="business.html?id=${businesses[i].id}"><img src="${businesses[i].image_url}"></a></div>
+                                <div> <a href="business.html?id=${businesses[i].id}">${businesses[i].name}</a></div>
                                 <a class="address">${businesses[i].location.address1}, ${businesses[i].location.city}</a>
                                 <div id="rating">Rating: ${businesses[i].rating} stars</div>`;
             topfive_row.appendChild(item);
@@ -37,8 +37,8 @@ const getBusinesses = async () => {
         for (let i = 5; i < businesses.length; i++) {
             let item = document.createElement('div');
             item.className = "business-card";
-            item.innerHTML =    `<div> <a href="business.html?${businesses[i].id}}"><img src="${businesses[i].image_url}"></a></div>
-                                <div> <a href="business.html?${businesses[i].id}">${businesses[i].name}</a></div>
+            item.innerHTML =    `<div> <a href="business.html?id=${businesses[i].id}"><img src="${businesses[i].image_url}"></a></div>
+                                <div> <a href="business.html?id=${businesses[i].id}">${businesses[i].name}</a></div>
                                 <a class="address">${businesses[i].location.address1}, ${businesses[i].location.city}</a>
                                 <div id="rating">Rating: ${businesses[i].rating} stars</div>`;
             business_row.appendChild(item);
@@ -48,7 +48,7 @@ const getBusinesses = async () => {
 }
 
 window.addEventListener('load', () => {
-    getBusinesses();
+    renderBusinesses();
 })
 
 

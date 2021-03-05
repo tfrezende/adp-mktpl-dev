@@ -10,8 +10,7 @@ app.use((req, res, next) => {
     next();
 });
 
-app.get('/api/businesses', (req, res) => {
-
+app.get('/api/businesses/', (req, res) => {
     request({
         url: `${baseUrl}/search?location=alpharetta&term=ice%cream`,
         headers: {
@@ -22,8 +21,8 @@ app.get('/api/businesses', (req, res) => {
         res.json(JSON.parse(body));    
     })
 });
-app.get('/api/businesses/:id', (req, res) => {
-    const id = req.params.id;
+app.get('/api/business/', (req, res) => {    
+    const id = req.query.id;
     request({
         url: `${baseUrl}/${id}`,
         headers: {
@@ -34,8 +33,8 @@ app.get('/api/businesses/:id', (req, res) => {
         res.json(JSON.parse(body));   
     })
 });
-app.get('/api/businesses/:id/reviews', (req, res) => {
-    const id = req.params.id;
+app.get('/api/business/reviews', (req, res) => {
+    const id = req.query.id;
     request({
         url: `${baseUrl}/${id}/reviews`,
         headers: {
